@@ -1,0 +1,65 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:528672504046:function:d96e2e87-db5e-4eeb-a7cf-07ad2a424046:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:528672504046:function:d96e2e87-db5e-4eeb-a7cf-07ad2a424046:Release_0"
+            }
+          },
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:528672504046:function:d96e2e87-db5e-4eeb-a7cf-07ad2a424046:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:528672504046:function:d96e2e87-db5e-4eeb-a7cf-07ad2a424046:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "containsAds": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "locales": {
+        "en-US": {}
+      },
+      "usesPersonalInfo": true
+    },
+    "publishingInformation": {
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "category": "SMART_HOME",
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "en-US": {
+          "description": "You can adjust your bed position using Alexa, the same as you can with the SleepIQ app.",
+          "examplePhrases": [
+            "Alexa open  bed",
+            "Set it to favorite",
+            "Lower my head"
+          ],
+          "keywords": [
+            "SleepNumber",
+            "SleepIQ"
+          ],
+          "name": "Alexa-SleepIQ-Jim",
+          "summary": "Allows you to control your Sleep Number 360 bed from Alexa"
+        }
+      },
+      "testingInstructions": "Sample Testing Instructions."
+    }
+  }
+}
