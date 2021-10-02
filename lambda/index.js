@@ -12,7 +12,7 @@ const messages = {
 };
 
 const SleepIQ = {
-    USERNAME: 'ka8z@email.com',
+    USERNAME: '_YOUR_SLEEPIQ_USERNAME_HERE_',
     PASSWORD: '_YOUR_SLEEPIQ_PASSWORD_HERE_'
 };
 
