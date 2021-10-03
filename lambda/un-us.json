@@ -47,6 +47,7 @@
               "name": "BedDirections",
               "type": "BedDirections",
               "samples": [
+                "middle",
                 "down",
                 "up"
               ]
@@ -103,6 +104,7 @@
               "name": "PressureOperations",
               "type": "PressureOperations",
               "samples": [
+                "set",
                 "modify",
                 "change"
               ]
@@ -139,13 +141,19 @@
         {
           "values": [
             {
+              "id": "50",
+              "name": {
+                "value": "middle"
+              }
+            },
+            {
               "id": "0",
               "name": {
                 "value": "down"
               }
             },
             {
-              "id": "50",
+              "id": "100",
               "name": {
                 "value": "up"
               }
@@ -191,6 +199,8 @@
               "name": {
                 "value": "zero gravity",
                 "synonyms": [
+                  "zero G",
+                  "0 G",
                   "0 g",
                   "zero g",
                   "0 gravity"
@@ -214,6 +224,8 @@
               "name": {
                 "value": "watch tv",
                 "synonyms": [
+                  "t. v.",
+                  "TV",
                   "watch t v",
                   "watch t. v."
                 ]
@@ -530,6 +542,9 @@
               "name": {
                 "value": "sleep number",
                 "synonyms": [
+                  "the sleep number to",
+                  "my sleep number to",
+                  "sleep number to",
                   "the sleep number",
                   "my sleep number"
                 ]
@@ -540,6 +555,9 @@
               "name": {
                 "value": "pressure",
                 "synonyms": [
+                  "the pressure to",
+                  "my pressure to",
+                  "pressure to",
                   "the pressure",
                   "my pressure"
                 ]
@@ -550,6 +568,11 @@
         },
         {
           "values": [
+            {
+              "name": {
+                "value": "set"
+              }
+            },
             {
               "id": "modify",
               "name": {
@@ -746,7 +769,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Please tell me up or down"
+            "value": "Please tell me up, middle or down"
           }
         ]
       },
@@ -926,7 +949,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "You can ask to change, modify or alter your pressure or sleep number"
+            "value": "You can change pressure or change sleep number"
           }
         ]
       },
@@ -950,5 +973,5 @@
       }
     ]
   },
-  "version": "14"
+  "version": "19"
 }

@@ -10,15 +10,15 @@ request = request.defaults({jar: true})
 class API {
     constructor (username, password) {
     	// fill these with your SleepIQ account details
-	    this.username = '_YOUR_SLEEPIO_USERNAME_'
-	    this.password = '_YOUR_SLEEPIO_PASSWORD_'
+	    this.username = '__YOUR_SLEEP_NUMBER_USERNAME_HERE__'
+	    this.password = '__YOUR_SLEEP_NUMBER_PASSWORD_HERE__'
 
 	    this.userID = '' // also the sleeperID I think
 	    this.bedId = ''
 	    this.key = ''
 	    this.json = ''
-	    this.bedSide = 'R'
-	    this.defaultBed = 1 // change if you want the class methods to default to a different bed in your datasets.
+	    this.bedSide = 'R'	// change to 'L' if you want to default to Left side instead of Right side
+	    this.defaultBed = 0 // change if you want the class methods to default to a different bed in your datasets.
     }
 
     genURL (url, method, body=null, callback=null) {

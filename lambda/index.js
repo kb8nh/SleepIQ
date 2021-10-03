@@ -8,12 +8,12 @@ const messages = {
   ERROR1: 'Sorry, I had trouble doing what you asked. Please try again.',
   GOODBYE: 'Bye! Thanks for using smart bed skill!',
   UNHANDLED: 'This skill doesn\'t support that. Please ask something else.',
-  HELP: 'You can say move my head or legs up or down, you can also ask to set it to one of the presets such as: read, watch tv, zero gravity, snore, or favorite, or set my pressure, finally you can add on the left or on the right',
+  HELP: 'You can say move my head or legs up or down, you can also ask to set it to one of the presets such as: read, watch tv, zero gravity, snore, or favorite, or change my pressure, finally you can add on the left or on the right',
 };
 
 const SleepIQ = {
-    USERNAME: '_YOUR_SLEEPIQ_USERNAME_HERE_',
-    PASSWORD: '_YOUR_SLEEPIQ_PASSWORD_HERE_'
+    USERNAME: '__YOUR_SLEEP_NUMBER_USERNAME_HERE__',
+    PASSWORD: '__YOUR_SLEEP_NUMBER_PASSWORD_HERE__'
 };
 
 const LaunchRequestHandler = {
@@ -36,7 +36,7 @@ const BedMovementIntentHandler = {
         return doHandleIntent(handlerInput, (api, slots, intentLogicCallbackCallback) => { //intentLogicCallback(api, slots, intentLogicCallbackCallback)
             var actuator = slots.BedParts.resolutions.resolutionsPerAuthority[0].values[0].value.id
             var num = slots.BedDirections.resolutions.resolutionsPerAuthority[0].values[0].value.id
-            //console.log(`Calling bed movement with actuator ${actuator} and num=${num}`);
+            console.log('Calling bed movement with actuator ${actuator} and num=${num}');
             
 	        api.adjust (actuator, num, intentLogicCallbackCallback);
         });
@@ -51,7 +51,7 @@ const ChangePressureIntentHandler = {
         return doHandleIntent(handlerInput, (api, slots, intentLogicCallbackCallback) => { //intentLogicCallback(api, slots, intentLogicCallbackCallback)
             var pressure = slots.PressureValues.resolutions.resolutionsPerAuthority[0].values[0].value.id
             var side = 'R'
-            console.log(`Calling setpressure with SleepNumber of ${pressure} for side %{side`);
+            console.log(`Calling setpressure with SleepNumber of ${pressure} for side ${side}`);
             
             api.setpressure(pressure, side, intentLogicCallbackCallback); 
             //api.adjust ('H', pressure, intentLogicCallbackCallback);
@@ -66,7 +66,7 @@ const PresetIntentHandler = {
     handle(handlerInput) {
         return doHandleIntent(handlerInput, (api, slots, intentLogicCallbackCallback) => { //intentLogicCallback(api, slots, intentLogicCallbackCallback)
             var preset = slots.Preset.resolutions.resolutionsPerAuthority[0].values[0].value.id
-        	//console.log(`Calling preset with ${preset}`);
+        	console.log('Calling preset with ${preset}');
         	
         	api.preset(preset, intentLogicCallbackCallback);
         });
@@ -139,7 +139,6 @@ const ErrorHandler = {
         return true;
     },
     handle(handlerInput, error) {
-       //console.log(`~~~~ Error handled: ${error.stack}`);
         const speakOutput = messages.ERROR1;
 
         return handlerInput.responseBuilder
@@ -179,7 +178,7 @@ function getBedSide(slots) {
         slots.BedSide.resolutions.resolutionsPerAuthority[0].values[0]) {
         side = slots.BedSide.resolutions.resolutionsPerAuthority[0].values[0].value.id
     }
-    //console.log('BED SIDE: ' + side);
+    console.log('BED SIDE: ' + side);
     return side;
 }
 
